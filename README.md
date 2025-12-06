@@ -5,18 +5,21 @@ A comprehensive fitness web application built with Flask that provides personali
 ## Features
 
 ### 🤖 AI-Powered Chatbot
+
 - **Text-based Exercise Recommendations**: Uses NLP (NLTK, TF-IDF) to understand user queries and recommend exercises
 - **Image-based Exercise Demonstrations**: Returns GIF demonstrations of exercises for specific muscle groups
 - **Natural Language Processing**: Implements cosine similarity and TF-IDF vectorization for intelligent query matching
 - **Spell Correction**: Automatically corrects spelling errors in user input
 
 ### 👥 User Management
+
 - User registration and authentication
 - Session management
 - Admin panel with CRUD operations for user management
 - Role-based access control (admin/user)
 
 ### 📚 Content Pages
+
 - **Home Page**: Main landing page with fitness information
 - **Blog/Articles**: Multiple fitness articles (5 articles available)
 - **Workout Plans**: Custom workout plan recommendations
@@ -24,6 +27,7 @@ A comprehensive fitness web application built with Flask that provides personali
 - **Chat Interface**: Interactive chatbot for exercise recommendations
 
 ### Exercise Database
+
 - Comprehensive CSV database (`fitness_exercises.csv`) with exercise information
 - Includes body parts, equipment, GIF URLs, and exercise descriptions
 - Supports multiple muscle groups: quads, pectorals, biceps, triceps, abs, back, shoulders, legs, arms, and more
@@ -61,6 +65,7 @@ A comprehensive fitness web application built with Flask that provides personali
 ## Technology Stack
 
 ### Backend
+
 - **Flask**: Web framework
 - **MySQL**: Database for user management
 - **NLTK**: Natural Language Processing
@@ -69,6 +74,7 @@ A comprehensive fitness web application built with Flask that provides personali
 - **spellchecker**: Spell correction library
 
 ### Frontend
+
 - **Bootstrap**: CSS framework
 - **jQuery**: JavaScript library
 - **HTML5/CSS3**: Markup and styling
@@ -77,6 +83,7 @@ A comprehensive fitness web application built with Flask that provides personali
 ## Installation
 
 ### Prerequisites
+
 - Python 3.7+
 - MySQL Server
 - pip (Python package manager)
@@ -84,17 +91,20 @@ A comprehensive fitness web application built with Flask that provides personali
 ### Setup Steps
 
 1. **Clone the repository**
+
    ```bash
    git clone <repository-url>
    cd "PFE V5/github repo"
    ```
 
 2. **Install Python dependencies**
+
    ```bash
    pip install flask flask-mysqldb nltk scikit-learn pandas spellchecker
    ```
 
 3. **Download NLTK data** (first time only)
+
    ```python
    import nltk
    nltk.download('punkt')
@@ -102,6 +112,7 @@ A comprehensive fitness web application built with Flask that provides personali
    ```
 
 4. **Configure MySQL database**
+
    - Create a MySQL database named `user_system`
    - Update database credentials in `deployIMG.py`:
      ```python
@@ -112,6 +123,7 @@ A comprehensive fitness web application built with Flask that provides personali
      ```
 
 5. **Create database table**
+
    ```sql
    CREATE TABLE users (
        userid INT AUTO_INCREMENT PRIMARY KEY,
@@ -122,6 +134,7 @@ A comprehensive fitness web application built with Flask that provides personali
    ```
 
 6. **Run the application**
+
    ```bash
    python deployIMG.py
    ```
@@ -132,7 +145,9 @@ A comprehensive fitness web application built with Flask that provides personali
 ## API Endpoints
 
 ### Chat Endpoints
+
 - `POST /predictxt` - Get text-based exercise recommendations
+
   - Request: `{"message": "I want to train my biceps"}`
   - Response: `{"answer": "Exercise description..."}`
 
@@ -141,6 +156,7 @@ A comprehensive fitness web application built with Flask that provides personali
   - Response: `{"answer": "https://exercise-gif-url.com/..."}`
 
 ### User Management
+
 - `GET /home` - Home page
 - `GET /login` - Login page
 - `POST /login` - User authentication
@@ -150,12 +166,14 @@ A comprehensive fitness web application built with Flask that provides personali
 - `GET /chat` - Chat interface (requires login)
 
 ### Content Pages
+
 - `GET /store` - Store page
 - `GET /article` - Blog listing
 - `GET /article2-5` - Individual articles
 - `GET /plans` - Workout plans page
 
 ### Admin Panel
+
 - `GET /panel` - Admin dashboard (admin only)
 - `POST /insert` - Add new user
 - `GET /delete/<id>` - Delete user
@@ -164,16 +182,19 @@ A comprehensive fitness web application built with Flask that provides personali
 ## Configuration
 
 ### Chatbot Settings
+
 - **Similarity Threshold** (text): 0.3 (in `main.py`)
 - **Similarity Threshold** (image): 0.2 (in `mainIMG.py`)
 
 ### Intent Files
+
 - `texttt.json`: Contains patterns and responses for text-based chatbot
 - `imgitt.json`: Contains patterns and responses for image-based chatbot
 
 ## Usage
 
 ### For Users
+
 1. Register a new account or login
 2. Navigate to the chat page
 3. Ask questions like:
@@ -183,6 +204,7 @@ A comprehensive fitness web application built with Flask that provides personali
 4. Receive text descriptions and/or GIF demonstrations
 
 ### For Administrators
+
 1. Login with admin credentials
 2. Access the admin panel at `/panel`
 3. Manage users (create, read, update, delete)
@@ -207,6 +229,7 @@ A comprehensive fitness web application built with Flask that provides personali
 ## Security Considerations
 
 ⚠️ **Important**: This is a development version. Before deploying to production:
+
 - Change the secret key in `deployIMG.py`
 - Implement password hashing (currently passwords are stored in plain text)
 - Use environment variables for database credentials
@@ -226,4 +249,3 @@ This is a final year project. For questions or contributions, please contact the
 
 - Exercise data sourced from fitness databases
 - Built using open-source libraries and frameworks
-

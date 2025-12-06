@@ -1,6 +1,7 @@
 # Fitness Website - AI-Powered Exercise Recommendation System
 
 A comprehensive fitness web application built with Flask that provides personalized exercise recommendations through an AI-powered chatbot, user management, fitness articles, workout plans, and an online store.
+![AI-Powered Chatbot](./demo.png)
 
 ## Features
 
@@ -226,3 +227,5 @@ A comprehensive fitness web application built with Flask that provides personali
 - The chatbot uses TF-IDF vectorization for semantic similarity matching
 - Exercise recommendations are randomly selected from matching exercises in the database
 
+## copyright
+-DROUICH OUSSAMA ©2022
